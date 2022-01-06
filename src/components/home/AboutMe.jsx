@@ -1,13 +1,14 @@
 import React from "react";
 import Pdf from "../../editable-stuff/resume.pdf";
-
+import { AiOutlineDownload } from "react-icons/ai"
+import { GoMortarBoard } from "react-icons/go";
 import axios from "axios";
 
 const pictureLinkRegex = new RegExp(
   /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
 );
 
-const AboutMe = ({ heading, message, link, imgSize, resume }) => {
+const AboutMe = ({ heading, message, link, imgSize, resume, darkmode }) => {
   const [profilePicUrl, setProfilePicUrl] = React.useState("");
   const [showPic, setShowPic] = React.useState(Boolean(link));
 
@@ -32,13 +33,13 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
   };
 
   return (
-    <div id="aboutme" className="jumbotron jumbotron-fluid m-0">
-      <div className="container container-fluid">
+    <div id="aboutme" className={`jumbotron jumbotron-fluid m-0 p-70 ${darkmode && "bg-dark"}`}>
+      <div className={`container container-fluid ${darkmode && "text-white"}`}>
         <div className="row">
           <div className="col-5 d-none d-lg-block align-self-center">
             {showPic && (
               <img
-                className="border border-secondary rounded-circle"
+                className="border border-info rounded-circle"
                 src={profilePicUrl}
                 alt="profilepicture"
                 width={imgSize}
@@ -53,14 +54,14 @@ const AboutMe = ({ heading, message, link, imgSize, resume }) => {
             {resume && (
               <p className="lead text-center">
                 <a
-                  className="btn btn-outline-dark btn-lg"
+                  className={`btn btn-outline-${darkmode ? "light" : "dark"} btn-lg`}
                   href={resume}
                   target="_blank"
                   rel="noreferrer noopener"
                   role="button"
                   aria-label="Resume/CV"
                 >
-                  Resume
+                  Resume <AiOutlineDownload/>
                 </a>
               </p>
             )}

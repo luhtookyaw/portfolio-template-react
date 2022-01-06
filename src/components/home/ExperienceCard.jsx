@@ -1,9 +1,6 @@
 import React from 'react';
+import { Col } from "react-bootstrap";
 
-import { 
-    Col,
-    Card
- } from "react-bootstrap";
 const ExperienceCard = ({data}) => {
     return ( 
         <Col lg="6">

@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
 
-const ProjectCard = ({ value }) => {
+const ProjectCard = ({ value, darkmode }) => {
   const {
     name,
     description,
@@ -15,7 +15,7 @@ const ProjectCard = ({ value }) => {
   } = value;
   return (
     <Col md={6}>
-      <Card className="card shadow-lg p-3 mb-5 bg-white rounded">
+      <Card className={`card shadow-lg p-3 mb-5 ${darkmode ? "bg-black text-white" : "bg-white"} rounded`}>
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
           <Card.Text>{(!description)?"":description || <Skeleton count={3} />} </Card.Text>
@@ -27,7 +27,7 @@ const ProjectCard = ({ value }) => {
             <Skeleton count={3} />
           )}
           {value ? (
-            <CardFooter star_count={stargazers_count} repo_url={svn_url} pushed_at={pushed_at} />
+            <CardFooter star_count={stargazers_count} repo_url={svn_url} pushed_at={pushed_at} darkmode={darkmode} />
           ) : (
             <Skeleton />
           )}
@@ -42,11 +42,11 @@ const CardButtons = ({ svn_url }) => {
     <>
       <a
         href={`${svn_url}/archive/master.zip`}
-        className="btn btn-outline-secondary mr-3"
+        className="btn btn-info mr-3"
       >
         <i className="fab fa-github" /> Clone Project
       </a>
-      <a href={svn_url} target=" _blank" className="btn btn-outline-secondary">
+      <a href={svn_url} target=" _blank" className="btn btn-info">
         <i className="fab fa-github" /> Repo
       </a>
     </>
@@ -96,7 +96,7 @@ const Language = ({ languages_url, repo_url }) => {
   );
 };
 
-const CardFooter = ({ star_count, repo_url, pushed_at }) => {
+const CardFooter = ({ star_count, repo_url, pushed_at, darkmode }) => {
   const [updated_at, setUpdated_at] = useState("0 mints");
 
   const handleUpdatetime = useCallback(() => {
@@ -127,7 +127,7 @@ const CardFooter = ({ star_count, repo_url, pushed_at }) => {
         target=" _blank"
         className="text-dark text-decoration-none"
       >
-        <span className="text-dark card-link mr-4">
+        <span className={`text-${darkmode ? "light" : "black"} card-link mr-4`}>
           <i className="fab fa-github" /> Stars{" "}
           <span className="badge badge-dark">{star_count}</span>
         </span>

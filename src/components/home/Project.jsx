@@ -17,7 +17,7 @@ const API = "https://api.github.com";
 // const gitHubQuery = "/repos?sort=updated&direction=desc";
 // const specficQuerry = "https://api.github.com/repos/hashirshoaeb/";
 
-const Project = ({ heading, username, length, specfic }) => {
+const Project = ({ heading, username, length, specfic, darkmode }) => {
   const allReposAPI = `${API}/users/${username}/repos?sort=updated&direction=desc`;
   const specficReposAPI = `${API}/repos/${username}`;
   const dummyProjectsArr = new Array(length + specfic.length).fill(
@@ -55,7 +55,7 @@ const Project = ({ heading, username, length, specfic }) => {
   }, [fetchRepos]);
 
   return (
-    <Jumbotron fluid id="projects" className="bg-light m-0">
+    <Jumbotron fluid id="projects" className={`${darkmode ? "bg-dark text-white" : "bg-light"} m-0 p-70`}>
       <Container className="">
         <h2 className="display-4 pb-5 text-center">{heading}</h2>
         <Row>
@@ -65,6 +65,7 @@ const Project = ({ heading, username, length, specfic }) => {
                   key={`project-card-${index}`}
                   id={`project-card-${index}`}
                   value={project}
+                  darkmode={darkmode}
                 />
               ))
             : dummyProjectsArr.map((project, index) => (
@@ -72,6 +73,7 @@ const Project = ({ heading, username, length, specfic }) => {
                   key={`dummy-${index}`}
                   id={`dummy-${index}`}
                   value={project}
+                  darkmode={darkmode}
                 />
               ))}
         </Row>

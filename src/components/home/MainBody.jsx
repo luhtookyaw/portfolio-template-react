@@ -1,29 +1,38 @@
 import React from "react";
-import Typist from "react-typist";
+import Typed from "react-typed";
+import { FaChevronDown } from "react-icons/fa";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
 const MainBody = React.forwardRef(
-  ({ gradient, title, message, icons }, ref) => {
+  ({ gradient, title, message, icons, darkmode }, ref) => {
     return (
       <Jumbotron
         fluid
         id="home"
         style={{
-          background: `linear-gradient(136deg,${gradient})`,
+          background: !darkmode ? `linear-gradient(136deg,${gradient})` : "black",
           backgroundSize: "1200% 1200%",
         }}
-        className="title bg-transparent bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0"
+        className={`title ${!darkmode && "bg-transparent"} bgstyle text-light min-vh-100 d-flex align-content-center align-items-center flex-wrap m-0`}
       >
-        <div id="stars"></div>
-        <Container className="text-center">
+        {darkmode && <div id="stars"></div>}
+        <Container 
+          className={`text-center ${darkmode && "darkmode-text"}`}
+        >
           <h1 ref={ref} className="display-1">
             {title}
           </h1>
-          <Typist className="lead typist" cursor={{ show: false }}>
-            {" "}
-            {message}
-          </Typist>
+          <Typed
+            style={{fontSize: "23px"}}
+            strings={[
+              'I am a programmer.',
+              'I am Web Developer.',
+              'I am AI Engineer.']}
+              typeSpeed={50}
+              backSpeed={55}
+              loop >
+          </Typed>
           <div className="p-5">
             {icons.map((icon, index) => (
               <a
@@ -33,17 +42,17 @@ const MainBody = React.forwardRef(
                 href={icon.url}
                 aria-label={`My ${icon.image.split("-")[1]}`}
               >
-                <i className={`fab ${icon.image}  fa-3x socialicons`} />
+                <i className={`fab ${icon.image}  fa-3x socialicons ${darkmode && "darkmode-icon"}`} />
               </a>
             ))}
           </div>
           <a
-            className="btn btn-outline-light btn-lg "
+            className="down-arrow"
             href="#aboutme"
             role="button"
             aria-label="Learn more about me"
           >
-            More about me
+            <FaChevronDown size={30}/>
           </a>
         </Container>
       </Jumbotron>

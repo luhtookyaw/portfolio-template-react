@@ -1,29 +1,35 @@
 {
   "name": "developers-portfolio",
   "description": "A personal static website/portfolio template hosted with GitHub Pages, built to showcase my recent projects.",
-  "homepage": "http://hashirshoaeb.com/home",
+  "homepage": "https://luhtookyaw.github.io",
   "version": "2.0.0",
   "private": true,
   "author": {
-    "name": "Hashir Shoaib",
-    "email": "hashirshoaeb@gmail.com",
-    "url": "https://github.com/hashirshoaeb"
+    "name": "Lu Htoo Kyaw",
+    "email": "luhtookyaw8798@gmail.com",
+    "url": "https://github.com/luhtookyaw"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
     "gh-pages": "^2.2.0",
+    "hamburger-react": "^2.4.1",
     "jquery": "^3.5.1",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
+    "react-circular-progressbar": "^2.0.4",
+    "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "^16.14.0",
+    "react-icons": "^4.3.1",
     "react-loading-skeleton": "^2.1.1",
+    "react-preloaders": "^3.0.3",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
-    "react-typist": "^2.0.5",
+    "react-typed": "^1.2.0",
+    "styled-components": "^5.3.3",
     "typescript": "^3.9.7"
   },
   "scripts": {
