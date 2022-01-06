@@ -15,7 +15,7 @@ function SkillsBar({ skill, value, isScrolled, darkmode }) {
     <div style={{ width: "95%" }}>
       <p className="lead mb-1 mt-2">{skill}</p>
       <ProgressBar
-        className={!isScrolled ? "progress" : `progress-bar-animation ${darkmode && "black"}`}
+        className={!isScrolled ? "progress" : `progress-bar-animation ${darkmode && "bg-dark"}`}
         variant={level(value)}
         now={value}
       />

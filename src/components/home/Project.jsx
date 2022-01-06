@@ -55,7 +55,7 @@ const Project = ({ heading, username, length, specfic, darkmode }) => {
   }, [fetchRepos]);
 
   return (
-    <Jumbotron fluid id="projects" className={`${darkmode ? "bg-dark text-white" : "bg-light"} m-0 p-70`}>
+    <Jumbotron fluid id="projects" className={`${darkmode && "bg-dark text-white"} m-0 p-70`}>
       <Container className="">
         <h2 className="display-4 pb-5 text-center">{heading}</h2>
         <Row>

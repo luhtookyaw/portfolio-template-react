@@ -15,13 +15,13 @@ function FrameworkCard({name, logo, value, darkmode}) {
     }
     return (
         <Col Ig="6">
-            <div style={{ width: 120, height: 120 }} className="framework-card">
+            <div style={{ width: 120, height: 120, margin: "10px 0px"}}>
                 <CircularProgressbarWithChildren 
                     value={value}
                     background
                     backgroundPadding={3}
                     styles={buildStyles({
-                        backgroundColor: `${darkmode ? "transparent" : "#e9ecef"}`,
+                        backgroundColor: `${darkmode ? "#343a40" : "#e9ecef"}`,
                         pathColor: level(value),
                         trailColor: `${darkmode ? "black" : "white"}`,
                     })}

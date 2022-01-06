@@ -48,11 +48,6 @@ const Home = React.forwardRef((props, ref) => {
           darkmode={props.darkmode}
         />
       )}
-      {
-        experiences.show && (
-          <Experience experiences={experiences}/>
-        )
-      }
       {education.show && (
         <Education
           heading={education.heading}
@@ -73,6 +68,14 @@ const Home = React.forwardRef((props, ref) => {
           darkmode={props.darkmode}
         />
       )}
+      {
+        experiences.show && (
+          <Experience 
+            experiences={experiences}
+            darkmode={props.darkmode}
+          />
+        )
+      }
       {repos.show && (
         <Project
           heading={repos.heading}

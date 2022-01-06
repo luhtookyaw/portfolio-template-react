@@ -111,13 +111,13 @@ const skills = {
   ],
   softSkills: [
     { name: "Full Stack Web Development", value: 60 },
-    { name: "Artificial Intelligence/Machine Learning", value: 66 },
+    { name: "A.I/Machine Learning", value: 66 },
     { name: "Data Science/Statistics", value: 42 },
     { name: "Programming Languages", value: 75 },
     { name: "Unix/Linux", value: 49 },
     { name: "UI/UX", value: 50 },
     { name: "Databases", value: 65 },
-    { name: "Desktop Publishing And Presentation Tools", value: 80 },
+    { name: "Desktop Office Tools", value: 80 },
   ],
   frameworks: [
     { name: "laravel.com", logo: require("../editable-stuff/laravellogo.svg"), value: 50 },

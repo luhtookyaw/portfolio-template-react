@@ -4,7 +4,7 @@ import useResizeObserver from "../hooks/useResizeObserver";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { GiSun, GiMoon } from "react-icons/gi";
-import { mainBody, repos, about, skills, education } from "../editable-stuff/config.js";
+import { mainBody, repos, about, skills, education, experiences } from "../editable-stuff/config.js";
 import { Sling } from "hamburger-react";
 
 const Navigation = React.forwardRef((props, ref) => {
@@ -76,6 +76,14 @@ const Navigation = React.forwardRef((props, ref) => {
               href={process.env.PUBLIC_URL + "/#skills"}
             >
               Skills
+            </Nav.Link>
+          )}
+          {experiences.show && (
+            <Nav.Link
+              className={`nav-link lead ${props.darkmode && "white"}`}
+              href={process.env.PUBLIC_URL + "/#experiences"}
+            >
+              Experiences
             </Nav.Link>
           )}
           {repos.show && (

@@ -1,15 +1,14 @@
 import React from "react";
-import Tab from "react-bootstrap/Tab";
-import Tabs from "react-bootstrap/Tabs";
 import SkillsTab from "./SkillsTab";
+import FrameworkCard from "./FrameworkCard";
 import { Jumbotron, Container, Row } from "react-bootstrap";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
-import FrameworkCard from "./FrameworkCard";
 
 
 function Skills({ heading, hardSkills, softSkills, frameworks, darkmode }) {
   const skillsTabRef = React.useRef();
   const [isScrolled, setIsScrolled] = React.useState(false);
+  const [openTab, setOpenTab] = React.useState(1);
   //const navbarDimensions = useResizeObserver(navbarMenuRef);
 
   useScrollPosition(
@@ -20,42 +19,75 @@ function Skills({ heading, hardSkills, softSkills, frameworks, darkmode }) {
     skillsTabRef
   );
   return (
-    <Jumbotron ref={skillsTabRef} fluid className={`${darkmode ? "bg-dark" : "bg-white"} m-0`} id="skills">
+    <Jumbotron ref={skillsTabRef} fluid className={`${darkmode && "bg-dark"} m-0`} id="skills">
       <Container className={`p-5 ${darkmode && "text-white"}`}>
         <h2 ref={skillsTabRef} className="display-4 pb-5 text-center">
           {heading}
         </h2>
-        <Tabs
-          className="skills-tabs"
-          defaultActiveKey="hard-skills"
-          id="skills-tabs"
-        >
-          <Tab
-            tabClassName={`skills-tab lead ${darkmode && "bg-dark text-white"}`}
-            eventKey="hard-skills"
-            title="Programming Skills"
+        <div className="flextab">
+        <div className="w-full">
+          <ul
+            className="tablist"
+            role="tablist"
           >
-            <Row className="pt-3 px-1">
-              <SkillsTab skills={hardSkills} isScrolled={isScrolled} darkmode={darkmode}/>
-            </Row>
-          </Tab>
-          <Tab
-            tabClassName={`skills-tab lead ${darkmode && "bg-dark text-white"}`}
-            eventKey="soft-skills"
-            title="Overall Skills"
-          >
-            <Row className="pt-3 px-1">
-              <SkillsTab skills={softSkills} isScrolled={isScrolled} darkmode={darkmode}/>
-            </Row>
-          </Tab>
-        </Tabs>
-        <Row>
-            {
-              frameworks.map(({name, logo, value}) => (
-                <FrameworkCard name={name} logo={logo} value={value} darkmode={darkmode}/>
-              ))
-            }
-        </Row>
+            <li className="tab">
+              <a
+                className={`shadow-lg ${openTab === 1 ? "text-white bg-info" : `${darkmode ? 'bg-black' : 'bg-white'} text-info`} tab-label`}
+                onClick={e => {
+                  e.preventDefault();
+                  setOpenTab(1);
+                }}
+                data-toggle="tab"
+                href="#link1"
+                role="tablist"
+              >
+                Codings
+              </a>
+            </li>
+            <li className="tab">
+              <a
+                className={`shadow-lg ${openTab === 2 ? "text-white bg-info" : `${darkmode ? 'bg-black' : 'bg-white'} text-info`} tab-label`}
+                onClick={e => {
+                  e.preventDefault();
+                  setOpenTab(2);
+                }}
+                data-toggle="tab"
+                href="#link2"
+                role="tablist"
+              >
+                Overall
+              </a>
+            </li>
+          </ul>
+          <div className={`shadow-lg ${darkmode ? "bg-black" : "bg-white"} tab-content`}>
+            <div className="tab-content-flex">
+              <div className="tab-content-item tab-space">
+                <div className={openTab === 1 ? "block" : "hidden"} id="link1">
+                  <p>
+                    <Row className="pt-3 px-1">
+                      <SkillsTab skills={hardSkills} isScrolled={isScrolled} darkmode={darkmode}/>
+                    </Row>
+                  </p>
+                </div>
+                <div className={openTab === 2 ? "block" : "hidden"} id="link2">
+                  <p>
+                    <Row className="pt-3 px-1">
+                      <SkillsTab skills={softSkills} isScrolled={isScrolled} darkmode={darkmode}/>
+                    </Row>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Row className={`shadow-lg ${darkmode ? 'bg-black' : 'bg-white'} framework-card`}>
+        {
+          frameworks.map(({name, logo, value}) => (
+            <FrameworkCard name={name} logo={logo} value={value} darkmode={darkmode}/>
+          ))
+        }
+      </Row>
       </Container>
     </Jumbotron>
   );
