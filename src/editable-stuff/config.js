@@ -64,7 +64,7 @@ const repos = {
   heading: "Recent Projects",
   gitHubUsername: "luhtookyaw", //i.e."johnDoe12Gh"
   reposLength: 0,
-  specificRepos: ["luhtookyaw.github.io", "netflix-clone-react", "restaurant-system-fullstack", "disneyplus-clone-react"],
+  specificRepos: ["portfolio-template-react", "netflix-clone-react", "restaurant-system-fullstack", "disneyplus-clone-react"],
 };
 
 // Education SECTION
