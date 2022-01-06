@@ -1,7 +1,8 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { GoMortarBoard } from "react-icons/go";
 
-const Education = ({ heading, message, img, imageSize, first, second, darkmode }) => {
+const Education = ({ heading, message, img, imageSize, universities, darkmode }) => {
   return (
     <div
       id="education"
@@ -13,10 +14,16 @@ const Education = ({ heading, message, img, imageSize, first, second, darkmode }
         <div className="row">
           <div className="col-md-6">
             <p className="lead">{message}</p>
-            <ul className="fa-ul">
+            {/* <ul className="fa-ul">
               <li className="lead"><span className="fa-li"><i className="fas fa-check-square"></i></span>{first}</li>
               <li className="lead"><span className="fa-li"><i className="fas fa-spinner fa-pulse"></i></span>{second}</li>
-            </ul>
+            </ul> */}
+            {universities.map((value) => (
+              <section className={`shadow ${darkmode ? 'bg-dark' : 'bg-white'} edu-accordion`}>
+                <div className="edu-name">{value.graduated && <GoMortarBoard size={20}/>} {value.name}</div>
+                <div className="edu-desc">{value.degree}</div>
+              </section>
+            ))}
           </div>
           <div className="col-md-6">
             <Carousel>

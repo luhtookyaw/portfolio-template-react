@@ -26,8 +26,8 @@ function FrameworkCard({name, logo, value, darkmode}) {
                         trailColor: `${darkmode ? "black" : "white"}`,
                     })}
                 >
-                    <a href={`https://www.${name}`} target="_blank">
-                        <img style={{ width: 45, marginTop: -5}} src={logo} alt="" />
+                    <a href={`https://www.${name}`} target="_blank" rel="noopener noreferrer">
+                        <img style={{ width: 45, marginTop: -5}} src={logo} alt="" className="framework-img"/>
                     </a>
                 </CircularProgressbarWithChildren>
             </div>

@@ -54,8 +54,7 @@ const Home = React.forwardRef((props, ref) => {
           message={education.message}
           img={education.images}
           imageSize={education.imageSize}
-          first={education.universities.first}
-          second={education.universities.second}
+          universities={education.universities}
           darkmode={props.darkmode}
         />
       )}

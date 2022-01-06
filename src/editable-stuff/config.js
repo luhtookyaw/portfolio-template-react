@@ -89,10 +89,10 @@ const education = {
     width: "400",
     height: "320"
   },
-  universities: {
-    first: "University Of Yangon - Bachelor Of Science (Geology)",
-    second: "University Of Information Technology - Bachelor Of Computer Science (Information Technology)",
-  },
+  universities: [
+    { name: "University Of Yangon", degree: "Bachelor Of Science (Geology)", graduated: true },
+    { name: "University Of Information Technology", degree: "Bachelor Of Computer Science (Information Technology)", graduated: false},
+  ],
 };
 
 // SKILLS SECTION

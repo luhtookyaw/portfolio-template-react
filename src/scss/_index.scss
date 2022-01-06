@@ -80,9 +80,21 @@ code {
 }
 
 .framework-card {
+  display: flex;
+  flex-wrap: nowrap;
   margin-top: 30px;
   padding: 10px 10px;
   border-radius: 0.25rem;
+  overflow-x: scroll;
+}
+.framework-card::-webkit-scrollbar {
+  display: none;
+}
+.framework-img {
+  transition: transform 350ms ease-in-out;
+}
+.framework-img:hover {
+  transform: scale(1.5);
 }
 
 .btn-outline-info {
@@ -209,3 +221,26 @@ code {
   background-color: black;
 }
 
+.edu-accordion {
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 0.25rem;
+  transition: all 500ms ease-in-out;
+}
+.edu-accordion .edu-name {
+  text-align: center;
+  padding: 6px 0px;
+}
+.edu-desc {
+  display: none;
+  color: white;
+  font-size: medium;
+  font-weight: 300;
+  padding: 6px 10px;
+  background-color: #0784a3;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+.edu-accordion:hover .edu-desc {
+  display: block;
+}
