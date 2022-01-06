@@ -1,7 +1,6 @@
 import React from "react";
 import Pdf from "../../editable-stuff/resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai"
-import { GoMortarBoard } from "react-icons/go";
 import axios from "axios";
 
 const pictureLinkRegex = new RegExp(
