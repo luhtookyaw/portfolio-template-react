@@ -134,7 +134,7 @@ const getInTouch = {
   show: true,
   heading: "Thanks For Checking Out",
   message:
-    "I am currently looking for job. If you are interested, email me at",
+    "If you want to send additional informations, email me at",
   email: "luhtookyaw8798@gmail.com",
   phone: "+959799899364"
 };

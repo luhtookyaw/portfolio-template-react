@@ -115,6 +115,7 @@ const App = () => {
             message={getInTouch.message}
             email={getInTouch.email}
             phone={getInTouch.phone}
+            darkmode={isDarkMode}
           />
         )}
       </Footer>
