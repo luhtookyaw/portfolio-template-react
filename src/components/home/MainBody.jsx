@@ -27,8 +27,9 @@ const MainBody = React.forwardRef(
             style={{fontSize: "23px"}}
             strings={[
               'I am a programmer.',
-              'I am Web Developer.',
-              'I am AI Engineer.']}
+              'I am ML Engineer.',
+              'I am AI Enthusiast.',
+            ]}
               typeSpeed={50}
               backSpeed={55}
               loop >

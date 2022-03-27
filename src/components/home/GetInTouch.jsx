@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {FaPhoneAlt} from "react-icons/fa";
 import { send } from 'emailjs-com';
+import Zoom from 'react-reveal/Zoom';
 
 const GetInTouch = ({ heading, message, email, phone, darkmode }) => {
   const [sending, setSending] = useState(false);
@@ -41,7 +42,9 @@ const GetInTouch = ({ heading, message, email, phone, darkmode }) => {
   };
   return (
     <>
-      <h2 className="display-4 pb-3 text-center">{heading}</h2>
+      <Zoom left>
+        <h2 className="display-4 pb-3 text-center">{heading}</h2>
+      </Zoom>
       <form onSubmit={onSubmit} class="shadow-lg rounded px-4 py-4">
         <div className="form-group">
           <input 

@@ -2,7 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
 import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import ProjectCard from "./ProjectCard";
+import Fade from "react-reveal/Fade";
 import axios from "axios";
 
 const dummyProject = {
@@ -61,12 +63,16 @@ const Project = ({ heading, username, length, specfic, darkmode }) => {
         <Row>
           {projectsArray.length
             ? projectsArray.map((project, index) => (
-                <ProjectCard
-                  key={`project-card-${index}`}
-                  id={`project-card-${index}`}
-                  value={project}
-                  darkmode={darkmode}
-                />
+                <Col md={12}>
+                  <Fade left={index % 2 == 0} right={index % 2 != 0}>
+                    <ProjectCard
+                      key={`project-card-${index}`}
+                      id={`project-card-${index}`}
+                      value={project}
+                      darkmode={darkmode}
+                    />
+                  </Fade>
+                </Col>
               ))
             : dummyProjectsArr.map((project, index) => (
                 <ProjectCard

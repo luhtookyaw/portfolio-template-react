@@ -16,16 +16,16 @@ const mainBody = {
       url: "https://github.com/luhtookyaw",
     },
     {
-      image: "fa-facebook",
-      url: "https://www.facebook.com/luhtoo.kyaw.73",
-    },
-    {
       image: "fa-linkedin",
       url: "https://www.linkedin.com/in/lu-htoo-kyaw-382347188",
     },
     {
       image: "fa-twitter",
       url: "https://twitter.com/LuHtooKyaw?t=5O_HN9nd0vljNEHO5GJpxw&s=09",
+    },
+    {
+      image: "fa-kaggle",
+      url: "https://www.kaggle.com/luhtookyaw",
     },
   ],
 };
@@ -64,7 +64,12 @@ const repos = {
   heading: "Recent Projects",
   gitHubUsername: "luhtookyaw", //i.e."johnDoe12Gh"
   reposLength: 0,
-  specificRepos: ["portfolio-template-react", "netflix-clone-react", "restaurant-system-fullstack", "disneyplus-clone-react"],
+  specificRepos: [
+    "portfolio-template-react", 
+    "restaurant-system-fullstack", 
+    "tensorflowjs-facemesh",
+    "sign-language-docker",
+  ],
 };
 
 // Education SECTION
@@ -103,16 +108,16 @@ const skills = {
     { name: "Python", value: 90 },
     { name: "SQL", value: 75 },
     { name: "PHP", value: 64 },
-    { name: "C/C++", value: 30 },
+    { name: "C++", value: 30 },
     { name: "JavaScript", value: 50 },
     { name: "Java", value: 40 },
     { name: "HTML/CSS", value: 70 },
-    { name: "R", value: 20 },
+    { name: "C#", value: 25 },
   ],
   softSkills: [
-    { name: "Full Stack Web Development", value: 60 },
+    { name: "Full Stack Web Development", value: 51 },
     { name: "A.I/Machine Learning", value: 66 },
-    { name: "Data Science/Statistics", value: 42 },
+    { name: "Data Science/Statistics", value: 32 },
     { name: "Programming Languages", value: 75 },
     { name: "Unix/Linux", value: 49 },
     { name: "UI/UX", value: 50 },
@@ -123,9 +128,10 @@ const skills = {
     { name: "laravel.com", logo: require("../editable-stuff/laravellogo.svg"), value: 50 },
     { name: "djangoproject.com", logo: require("../editable-stuff/djangologo.svg"), value: 16 },
     { name: "reactjs.org", logo: require("../editable-stuff/reactlogo.svg"), value: 80 },
-    { name: "vuejs.org", logo: require("../editable-stuff/vuelogo.svg"), value: 40 },
-    { name: "tensorflow.org", logo: require("../editable-stuff/tensorflowlogo.svg"), value: 80 },
+    { name: "vuejs.org", logo: require("../editable-stuff/vuelogo.svg"), value: 80 },
+    { name: "tensorflow.org", logo: require("../editable-stuff/tensorflowlogo.svg"), value: 85 },
     { name: "pytorch.org", logo: require("../editable-stuff/pytorchlogo.svg"), value: 40 },
+    { name: "docker.com", logo: require("../editable-stuff/dockerlogo.svg"), value: 40},
   ],
 };
 

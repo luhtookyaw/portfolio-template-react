@@ -1,7 +1,7 @@
 import React from "react";
-import Pdf from "../../editable-stuff/resume.pdf";
 import { AiOutlineDownload } from "react-icons/ai"
 import axios from "axios";
+import Pulse from "react-reveal/Pulse";
 
 const pictureLinkRegex = new RegExp(
   /[(http(s)?):(www.)?a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
@@ -37,13 +37,15 @@ const AboutMe = ({ heading, message, link, imgSize, resume, darkmode }) => {
         <div className="row">
           <div className="col-5 d-none d-lg-block align-self-center">
             {showPic && (
-              <img
-                className="border border-info rounded-circle"
-                src={profilePicUrl}
-                alt="profilepicture"
-                width={imgSize}
-                height={imgSize}
-              />
+              <Pulse>
+                <img
+                  className="border border-info rounded-circle"
+                  src={profilePicUrl}
+                  alt="profilepicture"
+                  width={imgSize}
+                  height={imgSize}
+                />
+              </Pulse>
             )}
           </div>
 

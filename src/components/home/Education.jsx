@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { GoMortarBoard } from "react-icons/go";
+import Zoom from "react-reveal/Zoom";
 
 const Education = ({ heading, message, img, imageSize, universities, darkmode }) => {
   return (
@@ -20,8 +21,8 @@ const Education = ({ heading, message, img, imageSize, universities, darkmode })
             </ul> */}
             {universities.map((value) => (
               <section className={`shadow ${darkmode ? 'bg-dark' : 'bg-white'} edu-accordion`}>
-                <div className="edu-name">{value.graduated && <GoMortarBoard size={20}/>} {value.name}</div>
-                <div className="edu-desc">{value.degree}</div>
+                  <div className="edu-name">{value.graduated && <GoMortarBoard size={20}/>} {value.name}</div>
+                  <div className="edu-desc"><Zoom>{value.degree}</Zoom></div>
               </section>
             ))}
           </div>

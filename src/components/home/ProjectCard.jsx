@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from "react";
-import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Skeleton from "react-loading-skeleton";
 import axios from "axios";
@@ -14,7 +13,6 @@ const ProjectCard = ({ value, darkmode }) => {
     pushed_at,
   } = value;
   return (
-    <Col md={6}>
       <Card className={`card shadow-lg p-3 mb-5 ${darkmode ? "bg-black text-white" : "bg-white"} rounded`}>
         <Card.Body>
           <Card.Title as="h5">{name || <Skeleton />} </Card.Title>
@@ -33,7 +31,6 @@ const ProjectCard = ({ value, darkmode }) => {
           )}
         </Card.Body>
       </Card>
-    </Col>
   );
 };
 
