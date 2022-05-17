@@ -65,10 +65,11 @@ const repos = {
   gitHubUsername: "luhtookyaw", //i.e."johnDoe12Gh"
   reposLength: 0,
   specificRepos: [
-    "portfolio-template-react", 
-    "restaurant-system-fullstack", 
+    "portfolio-template-react",
+    "restaurant-system-fullstack",
     "tensorflowjs-facemesh",
-    "sign-language-docker",
+    "heart-segmentation-monai",
+    "face-similarity-app",
   ],
 };
 
@@ -118,7 +119,7 @@ const skills = {
     { name: "Full Stack Web Development", value: 51 },
     { name: "A.I/Machine Learning", value: 66 },
     { name: "Data Science/Statistics", value: 32 },
-    { name: "Programming Languages", value: 75 },
+    { name: "DevOps", value: 25 },
     { name: "Unix/Linux", value: 49 },
     { name: "UI/UX", value: 50 },
     { name: "Databases", value: 65 },
@@ -132,6 +133,7 @@ const skills = {
     { name: "tensorflow.org", logo: require("../editable-stuff/tensorflowlogo.svg"), value: 85 },
     { name: "pytorch.org", logo: require("../editable-stuff/pytorchlogo.svg"), value: 40 },
     { name: "docker.com", logo: require("../editable-stuff/dockerlogo.svg"), value: 40},
+    { name: "kubernetes.io", logo: require("../editable-stuff/kuberneteslogo.svg"), value: 30},
   ],
 };
 

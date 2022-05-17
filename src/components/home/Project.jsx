@@ -64,7 +64,7 @@ const Project = ({ heading, username, length, specfic, darkmode }) => {
           {projectsArray.length
             ? projectsArray.map((project, index) => (
                 <Col md={12}>
-                  <Fade left={index % 2 == 0} right={index % 2 != 0}>
+                  <Fade left={index % 2 === 0} right={index % 2 !== 0}>
                     <ProjectCard
                       key={`project-card-${index}`}
                       id={`project-card-${index}`}
